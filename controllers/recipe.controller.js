@@ -33,6 +33,7 @@ export const addRecipe = async (req, res) => {
 export const deleteRecipe = async (req, res) => {
   try {
     await Recipe.findByIdAndDelete({ _id: req.params.id });
+    res.status(200);
   } catch (err) {
     res.status(409).json({ message: err.message });
   }
