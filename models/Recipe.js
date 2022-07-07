@@ -18,6 +18,12 @@ const RecipeSchema = mongoose.Schema({
   },
 });
 
-const Recipe = mongoose.model('Recipe', RecipeSchema);
+RecipeSchema.set('toJSON', {
+  transform: (_, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString();
+    delete returnedObject._id;
+    delete returnedObject.__v;
+  }
+});
 
-export default Recipe;
+export default Recipe = mongoose.model('Recipe', RecipeSchema);
