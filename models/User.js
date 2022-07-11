@@ -9,6 +9,12 @@ const UserSchema = new mongoose.Schema({
   favorites: [{ type: [Object] }]
 }, { timestamps: true });
 
-const User = mongoose.model('User', UserSchema);
+UserSchema.set('toJSON', {
+  transform: (_, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString();
+    delete returnedObject._id;
+    delete returnedObject.__v;
+  }
+});
 
-export default User;
+export const User = mongoose.model('User', UserSchema);

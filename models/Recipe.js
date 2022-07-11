@@ -26,4 +26,4 @@ RecipeSchema.set('toJSON', {
   }
 });
 
-export default Recipe = mongoose.model('Recipe', RecipeSchema);
+export const Recipe = mongoose.model('Recipe', RecipeSchema);
