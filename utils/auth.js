@@ -12,7 +12,7 @@ export const verifyToken = (req, res, next) => {
   } else {
     return res.status(401).json('User not authenticated.');
   }
-}
+};
 
 export const verifyAuth = (req, res, next) => {
   verifyToken(req, res, () => {
@@ -21,8 +21,8 @@ export const verifyAuth = (req, res, next) => {
     } else {
       res.status(403).json('User not authorized.');
     }
-  });
-}
+  })
+};
 
 export const verifyAdmin = (req, res, next) => {
   verifyToken(req, res, () => {
@@ -31,5 +31,5 @@ export const verifyAdmin = (req, res, next) => {
     } else {
       res.status(403).json('User not admin.');
     }
-  });
-}
+  })
+};

@@ -1,4 +1,4 @@
-const User = require('../models/User');
+import { User } from '../models/User.js';
 
 export const updateUser = async (req, res) => {
   if (req.body.password) {
@@ -69,5 +69,3 @@ export const getAllUsers = async (req, res) => {
     res.status(500).json(err);
   }
 };
-
-module.exports = router;
