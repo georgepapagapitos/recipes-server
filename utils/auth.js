@@ -21,7 +21,7 @@ export const verifyAuth = (req, res, next) => {
     } else {
       res.status(403).json('User not authorized.');
     }
-  })
+  });
 };
 
 export const verifyAdmin = (req, res, next) => {
@@ -31,5 +31,5 @@ export const verifyAdmin = (req, res, next) => {
     } else {
       res.status(403).json('User not admin.');
     }
-  })
+  });
 };

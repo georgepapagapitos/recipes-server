@@ -6,7 +6,7 @@ dotenv.config();
 
 import recipeRouter from './routes/recipe.router.js';
 import authRouter from './routes/auth.router.js';
-import userRouter from './routes/user.router.js'
+import userRouter from './routes/user.router.js';
 
 const app = express();
 

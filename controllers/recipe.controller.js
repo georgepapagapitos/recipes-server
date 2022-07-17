@@ -7,7 +7,7 @@ export const getRecipes = async (req, res) => {
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
-}
+};
 
 export const getRecipe = async (req, res) => {
   try {
@@ -16,7 +16,7 @@ export const getRecipe = async (req, res) => {
   } catch (err) {
     res.status(409).json({ message: err.message });
   }
-}
+};
 
 export const addRecipe = async (req, res) => {
   const recipe = req.body;
@@ -28,7 +28,7 @@ export const addRecipe = async (req, res) => {
   } catch (err) {
     res.status(409).json({ message: err.message });
   }
-}
+};
 
 export const deleteRecipe = async (req, res) => {
   try {
@@ -37,4 +37,4 @@ export const deleteRecipe = async (req, res) => {
   } catch (err) {
     res.status(409).json({ message: err.message });
   }
-}
+};

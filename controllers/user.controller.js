@@ -2,7 +2,7 @@ import { User } from '../models/User.js';
 
 export const updateUser = async (req, res) => {
   if (req.body.password) {
-    req.body.password = CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY).toString()
+    req.body.password = CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY).toString();
   }
 
   try {
@@ -20,7 +20,7 @@ export const deleteUser = async (req, res) => {
     await User.findByIdAndDelete(req.params.id);
     res.status(200).json('User deleted');
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 };
 
