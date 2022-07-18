@@ -21,8 +21,7 @@ export const getRecipe = async (req, res) => {
 export const addRecipe = async (req, res) => {
   const recipe = req.body;
   const cleanIngredientsArray = recipe.ingredients.filter(ingredient => ingredient.name !== '');
-  recipe.ingredients = cleanIngredientsArray;
-  const newRecipe = new Recipe(recipe);
+  const newRecipe = new Recipe({ ...recipe, ingredients: cleanIngredientsArray });
 
   try {
     await newRecipe.save();
